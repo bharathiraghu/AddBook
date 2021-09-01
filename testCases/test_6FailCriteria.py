@@ -36,8 +36,9 @@ class Test_006_FailCriteria:
         if len(count)==1:
             assert True
         else:
-            assert False
             self.driver.save_screenshot(".\\Screenshots\\" + "test_failcase.png")
+            self.driver.close()
+            assert False
         self.driver.close()
 
 

@@ -30,12 +30,13 @@ class Test_004_EditUserRegistration:
         self.ed.EditAddressState("California")
         self.ed.Editcolour("#13EC3E")
         results = []
+        self.ed.clickupdateAddress()
 
         # Verify firstname
+        self.rg = Registration(self.driver)
         firstname = self.rg.checkname()
         if firstname == "EditFirstName":
             assert True
         else:
             assert False
-        self.ed.UpdateAddress()
         self.driver.close()

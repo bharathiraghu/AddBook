@@ -7,7 +7,7 @@ class EditUser:
     txtbox_firstname_id='address_first_name'
     drpdown_state_id="address_state"
     link_Update_class="btn btn-primary"
-    link_UpdateAddresses_xpath = "//a[contains(text(),'Update Address')]"
+    link_UpdateAddresses_xpath = "//input[@name='commit']"
     def __init__(self, driver):
         self.driver = driver
 
@@ -39,3 +39,5 @@ class EditUser:
     def UpdateAddress(self):
         self.driver.find_element_by_xpath(self.link_Addresses_xpath).click()
 
+    def clickupdateAddress(self):
+        self.driver.find_element_by_xpath(self.link_UpdateAddresses_xpath).click()
